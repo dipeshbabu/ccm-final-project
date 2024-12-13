@@ -55,6 +55,9 @@ class BlackjackGame:
         # Update the player hand
         self.update_player_hand()
 
+        #print(f'player hand = {self.player_hand}')
+        #print(f'dealer hand = {self.dealer_hand}')
+
     def update_dealer_hand(self):
         '''
         Updating the dealer class with the dealer hand from BlackjackGame class
@@ -74,6 +77,8 @@ class BlackjackGame:
         # player makes a decision based on the dealer's card first
         player_action = self.player.make_decision(self.dealer_card)
 
+        actions = [player_action]
+
         # player keeps playing if they decide to hit
         while player_action == 'hit':
             # player hits and is dealt a card. Player class's hit method is called
@@ -84,8 +89,12 @@ class BlackjackGame:
                 break
             player_action = self.player.make_decision(self.dealer_card)
 
+            actions.append(player_action)
+        #print(f'player actions = {actions}')
         # player's score is updated
         self.player_score = self.player.get_score()
+
+        return actions
 
     def dealer_turn(self):
         '''
@@ -165,7 +174,7 @@ class BlackjackGame:
         self.player.reset_hand()
         self.dealer.reset_hand()
 
-    def play_game(self):
+    def play_game(self, actions_return = False):
         '''
         Plays the game of blackjack. The game consists of the following steps:
         1. Initialize the cards
@@ -176,11 +185,14 @@ class BlackjackGame:
         6. Reset the hands
         '''
         self.initialize_cards()
-        self.player_score = self.player_turn()
+        player_actions = self.player_score = self.player_turn()
         self.dealer_score = self.dealer_turn()
         outcome = self.determine_winner()
         self.player_payout(outcome)
         self.reset_hands()
+
+
+        return player_actions
 
 
 

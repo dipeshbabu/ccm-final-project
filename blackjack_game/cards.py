@@ -87,6 +87,12 @@ class Hand:
             self.score -= 10
             # decrementing the number of aces after changing the value of an ace
             self.num_aces -= 1
+
+    def __str__(self):
+        '''
+        String representation of the hand.
+        '''
+        return ', '.join(str(card) for card in self.hand)
         
     def reset_hand(self):
         '''

@@ -71,7 +71,6 @@ class ValueIteration:
         actions = self.get_state_actions(card_state)
 
         if self.is_terminal_state(card_state) or actions == [0]:
-            #print('stuck in terminal')
             return 0
         
         else:
