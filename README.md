@@ -4,7 +4,7 @@ This repository contains the implementation and analysis for the research projec
 
 ## Overview
 
-In this research, we modeled Blackjack as a Markov Decision Process (MDP) and applied various utility functions to investigate how different risk preferences influence decision-making. We used dynamic programming techniques to derive optimal policies and analyzed the outcomes using simulations and data analysis.
+In this research, we modeled Blackjack as a Markov Decision Process (MDP) and applied various utility functions such as Linear, Exponential, Quadratic, Logarithimic, and Quartic - to investigate how different risk preferences influence decision-making. We used dynamic programming techniques to derive optimal policies and analyzed the outcomes using simulations and data analysis.
 
 ## Key Features
 
