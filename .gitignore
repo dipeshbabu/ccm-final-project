@@ -1,3 +1,4 @@
 optimal_policy_training/dealer_transitions.pkl
 optimal_policy_training/player_transitions.pkl
 optimal_policy_training/states.pkl
+data_analyis/analysis.ipynb
